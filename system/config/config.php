@@ -29,4 +29,6 @@ class Config {
 
 }
 
+$app = new Config();
+
 ?>
