@@ -1,6 +1,6 @@
 <?php
 
-include_once "config.php";
+include_once __DIR__ . "/config.php";
 
 class DataBase extends Config {
 
@@ -10,12 +10,12 @@ class DataBase extends Config {
     private $password;
 
     public function __construct() {
-        $this->host = $this->env_db('DB_HOST');
-        $this->username = $this->env_db('DB_USERNAME');
-        $this->password = $this->env_db('DB_PASSWORD');
+        $this->host = $this->env('DB_HOST');
+        $this->username = $this->env('DB_USERNAME');
+        $this->password = $this->env('DB_PASSWORD');
     }
     
-    private function connect() {
+    private function connectDatabase() {
         try {
             $this->link = new PDO('mysql:host='.$this->host, $this->username, $this->password);
             $this->link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
@@ -30,6 +30,11 @@ class DataBase extends Config {
     public function initDatabase(){
         return $this->connect();
     }
+
+    public function createDatabase(){
+        return True;
+    }
+
 }
 
 ?>
