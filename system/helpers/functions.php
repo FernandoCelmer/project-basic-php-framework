@@ -1,0 +1,7 @@
+<?
+
+function getUrl(){
+    return True;
+}
+
+?>
