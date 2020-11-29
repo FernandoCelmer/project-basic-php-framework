@@ -8,6 +8,14 @@ class Auth extends Config {
         $auth = True;
     }
 
+    private function login(){
+        return True;
+    }
+
+    public static function logout() {
+        return True;
+    }
+
     function sessionChecker(){
         return True;
     }
