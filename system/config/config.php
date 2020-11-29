@@ -5,23 +5,15 @@ class Config {
     private $base;
 
     public function __construct() {
-        $this->base = parse_ini_file('.env', true);
+        $this->base = parse_ini_file('.env');
         foreach ($this->base as $key => $value) {
             $_ENV[$key] = $value;
         }
     }
 
-    function env_app($tag = NULL){
+    function env($tag = NULL){
         if($tag){
-            return $_ENV['app'][$tag];
-        }else{
-            return False;
-        }
-    }
-
-    function env_db($tag = NULL) {
-        if($tag){
-            return $_ENV['database'][$tag];
+            return $_ENV[$tag];
         }else{
             return False;
         }
@@ -29,6 +21,6 @@ class Config {
 
 }
 
-$app = new Config();
+new Config();
 
 ?>
