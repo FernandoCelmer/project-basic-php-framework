@@ -28,11 +28,30 @@ class DataBase extends Config {
     }
 
     public function initDatabase(){
-        return $this->connect();
+        return $this->connectDatabase();
     }
 
     public function createDatabase(){
         return True;
+    }
+
+    public function initData($data, $data_log){
+        if ($data){
+            foreach ($data_log as $key => $item){
+                if(isset($data[$key])){
+                    if ($data[$key]){
+                        $data_log[$key] = $data[$key];
+                    }else{
+                        unset($data_log[$key]);
+                    }
+                }else{
+                    unset($data_log[$key]);
+                }
+            }
+            return $data_log;
+        }else{
+            return False;
+        }
     }
 
 }
