@@ -2,6 +2,9 @@
 
 include_once "../../system/config/DataBase.php";
 
+/**
+ * This class defines the main parameters in the Logs table.
+ */
 class BaseLog extends DataBase {
 
     private $database;
@@ -13,6 +16,13 @@ class BaseLog extends DataBase {
         $this->data_init = $this->initData($data, $this->data_log);
     }
 
+    /**
+	 * Logs Structure.
+	 *
+	 * Structure of the Logs table with their respective details.
+	 *
+	 * @since 0.0.1
+	 */
     function structureTable(){
 
         $this->table_name = "base_log";
