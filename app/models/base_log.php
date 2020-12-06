@@ -6,6 +6,7 @@ class BaseLog extends DataBase {
 
     private $database;
     private $data_log;
+    private $table_name;
 
     function __construct($data = null) {
         $this->structureTable();
@@ -13,6 +14,9 @@ class BaseLog extends DataBase {
     }
 
     function structureTable(){
+
+        $this->table_name = "base_log";
+
         $this->data_log = array(
             "id" => null,
             "base_customer" => null,
