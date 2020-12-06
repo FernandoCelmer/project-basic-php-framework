@@ -1,6 +1,6 @@
 <?php
 
-include_once __DIR__ . "/config.php";
+include_once __DIR__ . "/Config/config.php";
 
 /**
  * This class defines the main parameters and standard methods for the application's database.

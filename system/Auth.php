@@ -1,6 +1,6 @@
 <?php
 
-include_once __DIR__ . "/Config.php";
+include_once __DIR__ . "/Config/config.php";
 
 /**
  * This class is responsible for the authentication of the application.

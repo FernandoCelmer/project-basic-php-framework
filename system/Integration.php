@@ -1,6 +1,6 @@
 <?php
 
-include_once __DIR__ . "/Config.php";
+include_once __DIR__ . "/Config/config.php";
 
 /**
  * Class responsible for defining basic requests to other APIs.
