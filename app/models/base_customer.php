@@ -2,6 +2,9 @@
 
 include_once "../../system/config/DataBase.php";
 
+/**
+ * This class defines the main parameters in the Customer table.
+ */
 class BaseCustomer extends DataBase {
 
     private $database;
@@ -12,6 +15,13 @@ class BaseCustomer extends DataBase {
         $this->data_init = $this->initData($data, $this->data_customer);
     }
 
+    /**
+	 * Customers Structure.
+	 *
+	 * Structure of the Customer table with their respective details.
+	 *
+	 * @since 0.0.1
+	 */
     function structureTable(){
 
         $this->table_name = "base_customer";
