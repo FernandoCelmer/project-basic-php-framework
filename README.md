@@ -1,4 +1,4 @@
-<img src="Docs/Basic-PHP-Framework.png">
+<img src="Docs/Basic-PHP-Framework.png" style="width: 100%">
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/FernandoCelmer/offy-basic-framework-php)
 ![GitHub followers](https://img.shields.io/github/followers/FernandoCelmer?label=Fernando%20Celmer&style=social)
