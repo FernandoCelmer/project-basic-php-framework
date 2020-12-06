@@ -13,6 +13,9 @@ class BaseSettings extends DataBase {
     }
 
     function structureTable(){
+
+        $this->table_name = "base_settings";
+        
         $this->data_settings = array(
             "id" => null,
             "status" => null,
