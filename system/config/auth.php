@@ -2,6 +2,9 @@
 
 include_once __DIR__ . "/Config.php";
 
+/**
+ * This class is responsible for the authentication of the application.
+ */
 class Auth extends Config {
 
     public function __construct() {

@@ -2,6 +2,9 @@
 
 include_once __DIR__ . "/config.php";
 
+/**
+ * This class defines the main parameters and standard methods for the application's database.
+ */
 class DataBase extends Config {
 
     protected $link;
@@ -15,6 +18,15 @@ class DataBase extends Config {
         $this->password = $this->env('DB_PASSWORD');
     }
     
+    /**
+     * Connect DataBase.
+     *
+     * It makes a connection to the database and returns a schema otherwise it returns false.
+     * 
+     * @since 0.0.1
+     *
+     * @return object|false Schema of Database.
+     */
     private function connectDatabase() {
         try {
             $this->link = new PDO('mysql:host='.$this->host, $this->username, $this->password);
@@ -35,6 +47,17 @@ class DataBase extends Config {
         return True;
     }
 
+    /**
+     * Database Initialization
+     *
+     * It manipulates the information received to conform to the specific serus models.
+     *
+     * @since 0.0.1
+     *
+     * @param array $data - Formatting information.
+     * @param array $data_log - Model information.
+     * @return array Returns formatted information without null fields.
+     */
     public function initData($data, $data_log){
         if ($data){
             foreach ($data_log as $key => $item){
