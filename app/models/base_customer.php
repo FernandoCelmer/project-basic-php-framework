@@ -13,6 +13,9 @@ class BaseCustomer extends DataBase {
     }
 
     function structureTable(){
+
+        $this->table_name = "base_customer";
+
         $this->data_customer = array(
             "id" => null,
             "user" => null,
