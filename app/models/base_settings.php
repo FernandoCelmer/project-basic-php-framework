@@ -2,6 +2,9 @@
 
 include_once "../../system/config/DataBase.php";
 
+/**
+ * This class defines the main parameters in the Settings table.
+ */
 class BaseSettings extends DataBase {
 
     private $database;
@@ -12,6 +15,13 @@ class BaseSettings extends DataBase {
         $this->data_init = $this->initData($data, $this->data_settings);
     }
 
+    /**
+	 * Settings Structure.
+	 *
+	 * Structure of the Settings table with their respective details.
+	 *
+	 * @since 0.0.1
+	 */
     function structureTable(){
 
         $this->table_name = "base_settings";
