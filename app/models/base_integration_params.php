@@ -3,9 +3,9 @@
 include_once "../../system/config/DataBase.php";
 
 /**
- * This class defines the main parameters in the Integration Params table.
+ * This class defines the main parameters in the Base Integration Params table.
  */
-class IntegrationParams extends DataBase {
+class BaseIntegrationParams extends DataBase {
 
     private $database;
     private $data_log;
@@ -17,21 +17,19 @@ class IntegrationParams extends DataBase {
     }
 
     /**
-	 * Integration Params Structure.
+	 * BaseIntegrationParams Structure.
 	 *
 	 * @since 0.0.1
 	 */
     function structureTable(){
 
-        $this->table_name = "integration_params";
+        $this->table_name = "base_integration_params";
 
         $this->data_log = array(
             "id" => null,
-            "base_customer" => null,
             "base_integration" => null,
-            "status" => null,
-            "date" => null,
             "name" => null,
+            "label" => null
         );
     }
 

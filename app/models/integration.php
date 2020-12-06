@@ -5,7 +5,7 @@ include_once "../../system/config/DataBase.php";
 /**
  * This class defines the main parameters in the Integration table.
  */
-class BaseLog extends DataBase {
+class Integration extends DataBase {
 
     private $database;
     private $data_log;
