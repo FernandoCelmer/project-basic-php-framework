@@ -1,4 +1,5 @@
 # IDE Files
 #-------------------------
 /system/config/.env
-composer.json
+/vendor/*
+composer.lock
