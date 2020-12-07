@@ -46,15 +46,15 @@ class Integration extends Config {
     }
 
     function makeGet($url, $params, $headers){
- 
+        return True;
     }
 
     function makePost($data, $url, $headers, $params){
-
+        return True;
     }
 
     function makePut($data, $url, $headers){
-
+        return True;
     }
 
     function makeRequest($endpoint = null, $params = null) {
