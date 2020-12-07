@@ -1,6 +1,6 @@
 <?php
 
-include_once "../../system/config/DataBase.php";
+include_once "../../system/DataBase.php";
 
 /**
  * This class defines the main parameters in the Logs table.
@@ -13,7 +13,15 @@ class BaseLog extends DataBase {
 
     function __construct($data = null) {
         $this->structureTable();
-        $this->data_init = $this->initData($data, $this->data_log);
+        $this->database = new DataBase();
+
+        if($data){
+            $data = $this->initData($data, $this->data_log);
+
+            $this->data_columns = $this->initColumns($data, 0);
+            $this->data_columns_values = $this->initColumns($data, 1);
+            $this->data_init = $this->dataPreparation($data, $this->data_log);
+        }
     }
 
     /**
@@ -34,12 +42,18 @@ class BaseLog extends DataBase {
             "model_id" => null,
             "description_log" => null,
             "action" => null,
-            "date_time" => null,
+            "operation_date" => null,
         );
     }
 
     function query_insert(){
-        return $this->data_init;
+        $query = $this->database->data_insert(
+            $this->table_name,
+            $this->data_columns,
+            $this->data_columns_values,
+            $this->data_init
+        );
+        return $query;
     }
 
     function query_update(){
@@ -60,12 +74,12 @@ class BaseLog extends DataBase {
         "model_id" => 1,
         "description_log" => 'Log',
         "action" => 'I',
-        "date_time" => '2020-11-30'
+        "operation_date" => '2020-11-30'
     );
 
     $app = new BaseLog($log);
-    $lista = $app->query_insert();
-    var_dump($lista);
+    $query = $app->query_insert();
+    echo $query;
 # ====== Test ====== #
 
 ?>
