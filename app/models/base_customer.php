@@ -68,7 +68,6 @@ class BaseCustomer extends DataBase {
 
 # ====== Test ====== #
     $log = array(
-        "id" => 1,
         "user" => "User",
         "email" => "php@teste.com",
         "password" => 'X5SDF1651FSFDSF15D1F',
