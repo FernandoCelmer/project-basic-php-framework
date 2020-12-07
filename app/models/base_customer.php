@@ -1,6 +1,6 @@
 <?php
 
-include_once "../../system/config/DataBase.php";
+include_once "../../system/DataBase.php";
 
 /**
  * This class defines the main parameters in the Customer table.
@@ -12,7 +12,17 @@ class BaseCustomer extends DataBase {
 
     function __construct($data = null) {
         $this->structureTable();
-        $this->data_init = $this->initData($data, $this->data_customer);
+
+        if($data){
+            $data = $this->initData($data, $this->data_customer);
+
+            $this->data_columns = $this->initColumns($data, 0);
+            $this->data_columns_values = $this->initColumns($data, 1);
+            $this->data_init = $this->dataPreparation($data, $this->data_customer);
+        }
+
+        $this->database = new DataBase();
+        $this->db = $this->database->initDatabase();
     }
 
     /**
@@ -37,7 +47,13 @@ class BaseCustomer extends DataBase {
     }
 
     function query_insert(){
-        return $this->data_init;
+        $query = $this->database->data_insert(
+            $this->table_name,
+            $this->data_columns,
+            $this->data_columns_values,
+            $this->data_init
+        );
+        return $query;
     }
 
     function query_update(){
@@ -51,18 +67,18 @@ class BaseCustomer extends DataBase {
 }
 
 # ====== Test ====== #
-$log = array(
-    "id" => 1,
-    "user" => "User",
-    "email" => "php@teste.com",
-    "password" => 'X5SDF1651FSFDSF15D1F',
-    "status" => 1,
-    "image" => null,
-);
+    $log = array(
+        "id" => 1,
+        "user" => "User",
+        "email" => "php@teste.com",
+        "password" => 'X5SDF1651FSFDSF15D1F',
+        "status" => 1,
+        "image" => null,
+    );
 
-$app = new BaseCustomer($log);
-$lista = $app->query_insert();
-var_dump($lista);
+    $app = new BaseCustomer($log);
+    $query = $app->query_insert();
+    echo $query;
 # ====== Test ====== #
 
 ?>
