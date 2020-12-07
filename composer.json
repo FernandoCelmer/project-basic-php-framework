@@ -1,0 +1,29 @@
+{
+    "name": "fernando-celmer/basic-php-ramework",
+    "description": "This is a basic framework written in php, easy and fast to use",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fernando Celmer",
+            "email": "email@fernandocelmer.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Project\\": "system/"
+        }
+    
+    },
+    "require-dev": {
+
+        "phpunit/phpunit": "7"
+
+    },
+    "minimum-stability": "dev",
+    "scripts": {
+
+        "test": "vendor/bin/phpunit"
+    },
+    "require": {}
+}
