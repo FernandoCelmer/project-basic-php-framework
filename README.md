@@ -14,6 +14,7 @@ This is a basic framework written in php, easy and fast to use. In order to buil
 ## ✔️ Requirements
 
     - PHP 8.0.0
+    - phpunit 7
     
 ## Branchs
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/FernandoCelmer/offy-basic-framework-php/DEV?label=Branch%20-%20DEV&style=flat-square)<br>    
